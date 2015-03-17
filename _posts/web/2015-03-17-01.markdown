@@ -1,0 +1,48 @@
+---
+layout: post
+title:  "小工具"
+date:   2015-03-17 14:03:34
+categories: web
+---
+#### js模版引擎
+<pre class="brush: javascript; title: '一个超简单的js模版引擎'">
+(function() {
+ var cache = {}; 
+ this.tmpl = function tmpl(str, data) {
+ var fn = ! /\W/.test(str) ? cache[str] = cache[str] || tmpl(document.getElementById(str).innerHTML) :
+ new Function("obj", "var p=[],print=function(){p.push.apply(p,arguments);};" +
+     "with(obj){p.push('" +
+     str.replace(/[\r\t\n]/g, " ")
+     .split("<%").join("\t")
+     .replace(/((^|%>)[^\t]*)'/g, "$1\r")
+     .replace(/\t=(.*?)%>/g, "',$1,'")
+     .split("\t").join("');")
+     .split("%>")
+     .join("p.push('")
+     .split("\r").join("\\'") + "');}return p.join('');");
+ return data ? fn(data) : fn; 
+ };
+ })();
+</pre>
+<pre class="brush: javascript; title: '一个更简单的js模版引擎（只支持变量替换）'">
+var tmpl = function(str, data) {
+    return str.replace(/\$\{(\w+)\}/g, function(t, k) {
+            return data[k] ? data[k] : ""; 
+            }); 
+};  
+</pre>
+
+#### 一个低端IE可以用的调试工具（firebug-lite）,保存到收藏链接
+
+<pre class="brush: javascript; title: '官方链接（googlecode上）'">
+javascript:_st = document.createElement("script");_st.src = "http://fbug.googlecode.com/svn/lite/branches/firebug1.4/content/firebug-lite-dev.js";_bd = document.getElementsByTagName("body")[0];_bd.appendChild(_st);void 0;
+</pre>
+<pre class="brush: js; title: '或者(github上)'">
+javascript:_st = document.createElement("script");_st.src = "http://kisstherain.github.io/firebug/content/firebug-lite-dev.js";_bd = document.getElementsByTagName("body")[0];_bd.appendChild(_st);void 0;
+</pre>
+
+
+<link rel="stylesheet" type="text/css" media="all" href="http://www.alloyteam.com/wp-includes/syntaxhighlighter/styles/shCoreDefault.css" />
+<script src="http://apps.bdimg.com/libs/SyntaxHighlighter/3.0.83/scripts/shCore.js"></script>
+<script src="http://apps.bdimg.com/libs/SyntaxHighlighter/3.0.83/scripts/shAutoloader.min.js"></script>
+<script>function path(){var b=arguments,a=[];for(var c=0;c<b.length;c++){a.push(b[c].replace("@","http://apps.bdimg.com/libs/SyntaxHighlighter/3.0.83/scripts/"))}return a}SyntaxHighlighter.autoloader.apply(null,path("applescript            @shBrushAppleScript.js","actionscript3 as3      @shBrushAS3.js","bash shell             @shBrushBash.js","coldfusion cf          @shBrushColdFusion.js","cpp c                  @shBrushCpp.js","c# c-sharp csharp      @shBrushCSharp.js","css                    @shBrushCss.js","delphi pascal          @shBrushDelphi.js","diff patch pas         @shBrushDiff.js","erl erlang             @shBrushErlang.js","groovy                 @shBrushGroovy.js","java                   @shBrushJava.js","jfx javafx             @shBrushJavaFX.js","js jscript javascript  @shBrushJScript.js","perl pl                @shBrushPerl.js","php                    @shBrushPhp.js","text plain             @shBrushPlain.js","py python              @shBrushPython.js","ruby rails ror rb      @shBrushRuby.js","sass scss              @shBrushSass.js","scala                  @shBrushScala.js","sql                    @shBrushSql.js","vb vbnet               @shBrushVb.js","xml xhtml xslt html    @shBrushXml.js"));SyntaxHighlighter.all();</script>
