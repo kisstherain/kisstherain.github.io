@@ -2,7 +2,7 @@
 layout: post
 title:  "小工具"
 date:   2015-03-17 14:03:34
-categories: web开发
+categories: web
 ---
 #### js模版引擎
 <pre class="brush: javascript; title: '一个超简单的js模版引擎'">
