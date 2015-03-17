@@ -2,7 +2,7 @@
 layout: post
 title:  "按照xhdpi比例格式化获取到的图片"
 date:   2015-03-17 14:03:34
-categories: android
+categories: android开发
 ---
 <pre class="brush: java; title: '按照xhdpi比例格式化获取到的图片'">
 	private void getXhdpiDrawable(Bitmap imgBitmap){
