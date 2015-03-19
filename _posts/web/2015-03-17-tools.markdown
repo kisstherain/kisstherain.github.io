@@ -27,9 +27,9 @@ categories: web
 <pre class="brush: javascript; title: '一个更简单的js模版引擎（只支持变量替换）'">
 var tmpl = function(str, data) {
     return str.replace(/\$\{(\w+)\}/g, function(t, k) {
-            return data[k] ? data[k] : ""; 
-            }); 
-};  
+        return data[k] ? data[k] : ""; 
+    }); 
+};
 </pre>
 
 #### 一个低端IE可以用的调试工具（firebug-lite）,保存到收藏链接

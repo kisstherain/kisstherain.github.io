@@ -14,8 +14,6 @@ categories: android
     }
 </pre>
 
-
-	
 <link rel="stylesheet" type="text/css" media="all" href="http://www.alloyteam.com/wp-includes/syntaxhighlighter/styles/shCoreDefault.css" />
 <script src="http://apps.bdimg.com/libs/SyntaxHighlighter/3.0.83/scripts/shCore.js"></script>
 <script src="http://apps.bdimg.com/libs/SyntaxHighlighter/3.0.83/scripts/shAutoloader.min.js"></script>
