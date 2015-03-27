@@ -21,7 +21,7 @@ categories: web
     })
 })()
 </pre>
-<pre class="brush: javascript; title: '压缩后代码，放的url即可'">
+<pre class="brush: javascript; title: '压缩后代码'">
 (function() {var _a = (/\'(\w{40,})\'.+\'(\d{5,})\'/g).exec($("a[href^='javascript:playmed']").attr("href"));$.ajax({url: "/time.php",data: {str: _a[1],sid: _a[2]},dataType: "text",success: function(data) {location.href = data}})})();
 </pre>
 
