@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "安卓的坑"
+date:   2015-05-06 08:20:34
+categories: android
+
+####安卓的坑
+
+1. TextView		
+	TextView.setMovementMethod
+	如果textview里有自定义的事件，为了解决父级事件导致textview事件失效，则需要调用setMovementMethod来屏蔽父级事件。
+	但是setMovementMethod会导致textview开启滚动功能，并且无法禁止滚动。猥琐的解决办法是继承textview并注释禁用掉scrollTo方法。
+	
+2. 小米部分手机		
+	对shape的处理，如果填充色不设置，可能会被默认成黑色。只好手动设置填充透明了。
+	
+3. 布局与过度重绘		
+	相对于web的开发，安卓对重绘的要求更为严格，甚至设置背景色都要考虑必要性，稍微不注意整个页面就都红了。虽然能层级嵌套，但是层级对性能的影响已经让人无法自由的布局了，考虑布局不再考虑，布局是否合理，而是要考虑，如何能少一层嵌套，等布局好了，以后稍微修改也许都需要重来。
+	
+	
+
