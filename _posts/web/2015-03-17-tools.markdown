@@ -40,6 +40,10 @@ javascript:_st = document.createElement("script");_st.src = "http://fbug.googlec
 <pre class="brush: js; title: '或者(github上)'">
 javascript:_st = document.createElement("script");_st.src = "http://kisstherain.github.io/firebug/content/firebug-lite-dev.js";_bd = document.getElementsByTagName("body")[0];_bd.appendChild(_st);void 0;
 </pre>
+<pre class="brush: bash; title: '进制转换命令，例：将0.8透明度转换16进制'">
+    echo 'obase=16;0.8*255'|bc
+</pre>
+
 
 
 <link rel="stylesheet" type="text/css" media="all" href="http://www.alloyteam.com/wp-includes/syntaxhighlighter/styles/shCoreDefault.css" />
